@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 public class MyActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.example.debbly.practiceapp.MESSAGE";
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,6 @@ public class MyActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
                 Intent intent = new Intent(view.getContext(), DisplayMessageActivity.class);
                 EditText editText = (EditText) findViewById(R.id.edit_message);
                 String message = editText.getText().toString();
