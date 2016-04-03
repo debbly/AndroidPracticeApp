@@ -28,6 +28,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
                 //I want this to go back to the original screen
                 Intent intent = new Intent(view.getContext(), MyActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

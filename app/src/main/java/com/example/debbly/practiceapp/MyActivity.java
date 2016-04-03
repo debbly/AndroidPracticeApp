@@ -23,6 +23,7 @@ public class MyActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,6 +32,7 @@ public class MyActivity extends AppCompatActivity {
                 String message = editText.getText().toString();
                 intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
             }
         });
     }
