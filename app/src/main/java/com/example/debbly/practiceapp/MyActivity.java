@@ -1,19 +1,43 @@
 package com.example.debbly.practiceapp;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.List;
+import java.util.logging.Level;
 
 public class MyActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.example.debbly.practiceapp.MESSAGE";
     public final static String EXTRA_SUBJECT = "com.example.debbly.practiceapp.SUBJECT";
+
+    private static final Level LOGGING_LEVEL = Level.OFF;
+
+    private static final String PREF_ACCOUNT_NAME = "accountName";
+
+    static final String TAG = "TasksSample";
+
+    static final int REQUEST_GOOGLE_PLAY_SERVICES = 0;
+
+    static final int REQUEST_AUTHORIZATION = 1;
+
+    static final int REQUEST_ACCOUNT_PICKER = 2;
+
+
+    List<String> tasksList;
+
+    ArrayAdapter<String> adapter;
+
+    int numAsyncTasks;
+
+    private ListView listView;
 
 
     @Override
