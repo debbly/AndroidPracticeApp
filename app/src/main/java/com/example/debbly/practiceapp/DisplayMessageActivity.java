@@ -35,9 +35,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
+        String subject = intent.getStringExtra(MyActivity.EXTRA_SUBJECT);
         TextView textView = new TextView(this);
         textView.setTextSize(40);
-        textView.setText(message);
+        textView.setText(subject + ": " + message);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
         layout.addView(textView);

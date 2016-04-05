@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 public class MyActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.example.debbly.practiceapp.MESSAGE";
+    public final static String EXTRA_SUBJECT = "com.example.debbly.practiceapp.SUBJECT";
 
 
     @Override
@@ -29,8 +30,11 @@ public class MyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), DisplayMessageActivity.class);
                 EditText editText = (EditText) findViewById(R.id.edit_message);
+                EditText editSubject = (EditText) findViewById(R.id.edit_subject);
+                String subject = editSubject.getText().toString();
                 String message = editText.getText().toString();
                 intent.putExtra(EXTRA_MESSAGE, message);
+                intent.putExtra(EXTRA_SUBJECT, subject);
                 startActivity(intent);
                 overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
             }
