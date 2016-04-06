@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'MyAndroidKey'
+            keyPassword 'myPassword'
+            storeFile file('C:/Users/debbly/keystore/android.jks')
+            storePassword 'myPassword'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.example.debbly.practiceapp"
         minSdkVersion 15
@@ -15,6 +22,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -28,4 +36,5 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.5'
     compile 'com.google.api-client:google-api-client:1.20.0'
     compile 'com.google.android.gms:play-services-identity:8.4.0'
+    compile 'com.google.android.gms:play-services-auth:8.4.0'
 }
