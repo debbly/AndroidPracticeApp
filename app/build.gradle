@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'MyAndroidKey'
-            keyPassword 'myPassword'
+            keyPassword 'y1rs87dlkerori'
             storeFile file('C:/Users/debbly/keystore/android.jks')
-            storePassword 'myPassword'
+            storePassword 'y1rs87dlkerori'
         }
     }
     compileSdkVersion 23
@@ -24,6 +24,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
