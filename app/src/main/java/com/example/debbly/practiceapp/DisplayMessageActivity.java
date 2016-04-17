@@ -33,6 +33,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // create two layouts to hold buttons
+        RelativeLayout top = new RelativeLayout(this);
+        RelativeLayout bottom = new RelativeLayout(this);
+
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
         String subject = intent.getStringExtra(MyActivity.EXTRA_SUBJECT);
@@ -40,8 +44,16 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setTextSize(40);
         textView.setText("To: " + "\n" + subject + ": " + message);
 
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        layout.addView(textView);
+        //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
+        //layout.addView(textView);
+
+        RelativeLayout root = (RelativeLayout) findViewById(R.id.content);
+
+        // add generated layouts to root layout view
+        // LinearLayout root = (LinearLayout)this.findViewById(R.id.root_layout);
+
+        root.addView(textView);
+        root.addView(textView);
     }
 
 }
