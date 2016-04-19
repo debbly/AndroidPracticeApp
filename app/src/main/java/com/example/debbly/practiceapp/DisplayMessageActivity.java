@@ -53,12 +53,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         topBar.setTextSize(25);
         topBar.setText("Subject: " + subject);
 
-        //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
-        //layout.addView(textView);
-
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.content);
         linearLayout.addView(topBar);
         linearLayout.addView(textView);
     }
-
 }
