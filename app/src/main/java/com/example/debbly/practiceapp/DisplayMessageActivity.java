@@ -42,7 +42,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String subject = intent.getStringExtra(MyActivity.EXTRA_SUBJECT);
         TextView textView = new TextView(this);
         textView.setTextSize(40);
-        textView.setText("To: " + "\n" + subject + ": " + message);
+        textView.setText("Message: " + message);
+
+        TextView top = new TextView(this);
+        top.setTextSize(25);
+        top.setText("To: " + subject);
 
         //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
         //layout.addView(textView);
@@ -52,7 +56,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         // add generated layouts to root layout view
         // LinearLayout root = (LinearLayout)this.findViewById(R.id.root_layout);
 
-        root.addView(textView);
+        root.addView(top);
         root.addView(textView);
     }
 
