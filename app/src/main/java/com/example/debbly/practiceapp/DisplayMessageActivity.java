@@ -7,11 +7,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.GridLayout.LayoutParams;
 
 public class DisplayMessageActivity extends AppCompatActivity {
-
+    final int TOP_ID = 3;
+    final int BOTTOM_ID = 4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,31 +38,27 @@ public class DisplayMessageActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // create two layouts to hold buttons
-        RelativeLayout top = new RelativeLayout(this);
-        RelativeLayout bottom = new RelativeLayout(this);
-
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
         String subject = intent.getStringExtra(MyActivity.EXTRA_SUBJECT);
+
+        TextView topBar = new TextView(this);
+        topBar.setId(TOP_ID);
+
         TextView textView = new TextView(this);
+        textView.setId(BOTTOM_ID);
         textView.setTextSize(40);
         textView.setText("Message: " + message);
 
-        TextView top = new TextView(this);
-        top.setTextSize(25);
-        top.setText("To: " + subject);
+        topBar.setTextSize(25);
+        topBar.setText("Subject: " + subject);
 
         //RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
         //layout.addView(textView);
 
-        RelativeLayout root = (RelativeLayout) findViewById(R.id.content);
-
-        // add generated layouts to root layout view
-        // LinearLayout root = (LinearLayout)this.findViewById(R.id.root_layout);
-
-        root.addView(top);
-        root.addView(textView);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.content);
+        linearLayout.addView(topBar);
+        linearLayout.addView(textView);
     }
 
 }
