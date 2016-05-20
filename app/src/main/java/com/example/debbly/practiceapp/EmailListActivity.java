@@ -20,7 +20,8 @@ public class EmailListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Ugh, should read from gmail API in order to create cards with each email.. Another note, on a tap, it should reveal as much as the card can show", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Ugh, should read from gmail API in order to create cards with each email.. Another note, on a tap, it should reveal as much as the card can show.. will commit more", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Ugh, should read from gmail API in order to create cards with each email.. Another note, on a tap, it should reveal as much as the card can show.. will commit more", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
