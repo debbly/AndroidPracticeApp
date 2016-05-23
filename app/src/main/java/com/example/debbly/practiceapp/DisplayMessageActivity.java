@@ -64,7 +64,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setTextSize(40);
         textView.setText("Message: " + message);
 
-        topBar.setTextSize(25);
+        topBar.setTextSize(20);
         topBar.setText("Subject: " + subject);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.content);
