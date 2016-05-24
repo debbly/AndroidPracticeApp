@@ -36,20 +36,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
-        /* Ideally would like another button to send and a button to return
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-                //I want this to go back to the original screen
-                Intent intent = new Intent(view.getContext(), MyActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
-            }
-        });
-        */
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
