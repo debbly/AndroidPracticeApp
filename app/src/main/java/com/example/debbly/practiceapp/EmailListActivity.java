@@ -23,6 +23,7 @@ public class EmailListActivity extends AppCompatActivity {
                 Snackbar.make(view, "Ugh, should read from gmail API in order to create cards with each email.. Another note, on a tap, it should reveal as much as the card can show.. will commit more", Snackbar.LENGTH_LONG)
                 Snackbar.make(view, "Ugh, should read from gmail API in order to create cards with each email.. Another note, on a tap, it should reveal as much as the card can show.. will commit more", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
     }
